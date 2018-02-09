@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%= require('html-loader!./head.html') %>
+	<body>
+		<header id="codeRoot">
+			<%= require('html-loader!./code-minified.html') %>
+		</header>
+		<div class="content">
+			<div class="container-fluid">
+				<section class="intro">
+					<div class="portrait">
+						<img src="../img/sebastian-nordqvist.jpg" 
+								 alt="Sebastian Nordqvist">
+					</div>
+				
+					<h1>Sebastian Nordqvist</h1>
+					<p>Analytical, curious, positive and driven. Agile learner and problem solver. Thrives when being challenged and is always looking for ways to improve myself and people around me.</p>
+				</section>
+
+				<%= require('html-loader!./section_projects.html') %>
+
+				<section class="experience">
+				  <h2>Experience</h2>
+				  <h3>Webbyrån Konsulterna</h3>
+				  <span class="caption">July 2015 - April 2017</span>
+				  <p>Project manager, server admin, front-end developer.</p>
+				  <h3>118100</h3>
+				  <span class="caption">2008 - 2009</span>
+				  <p>Internship web development 40%.</p>
+				  <a 
+				  	target="_blank" 
+				  	href="https://docs.google.com/document/d/1IadnojWoM5wjDWOjhOXrqONKedEEaGUFp8Nj8yaK5XM/edit?usp=sharing">
+						Letter of recommendation (in swedish)
+					</a>
+				</section>
+
+				<%= require('./section_competence.ejs') %>
+
+				<section class="about-me">
+					<h2>About me</h2>
+					<ul>
+						<li><strong>Age:</strong> 24</li>
+						<li><strong>Location:</strong> Stockholm, Sweden</li>
+						<li><strong>Languages:</strong> Swedish, English</li>
+						<li><strong>Current employer:</strong> Webbyrån Konsulterna</li>
+						<li><strong>Education:</strong> IT-Media</li>
+					</ul>
+					<p>
+						Feel free to contact me if you have any questions.<br>
+					</p>
+				</section>
+		
+			</div><!-- .container-fluid -->
+		</div><!-- .content -->
+
+		<%= require('html-loader!./footer.ejs') %>
+
+		<script src="main.bundle.js"></script>
+	</body>
+</html>

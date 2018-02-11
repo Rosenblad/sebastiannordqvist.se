@@ -1,8 +1,9 @@
 /* eslint-disable react/prefer-stateless-function */
 
 import React from 'react';
-import '../styles/styles.css';
+import { hot } from 'react-hot-loader';
 
+import '../styles/styles.css';
 import Header from './Sections/Header';
 import Intro from './Intro';
 import ListProjects from './ListProjects';
@@ -31,4 +32,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default hot(module)(App);

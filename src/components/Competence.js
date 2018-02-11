@@ -9,7 +9,7 @@ const Competence = () => (
 
       {svgIcons.map(icon => (
         <div className="competency cx2 cs2" key={uuid.v4()}>
-          <SVG src={`../src/svg/${icon}.svg`} />
+          <SVG src={`assets/icons/${icon}.svg`} />
         </div>
         ))}
 

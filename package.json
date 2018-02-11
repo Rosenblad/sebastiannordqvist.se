@@ -5,12 +5,14 @@
   "author": "Sebastian Nordqvist <nordqvist.sebastian@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "start": "react-static start",
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "build:webpack": "npm run clean && cross-env NODE_ENV=production webpack",
     "analyze": "cross-env NODE_ENV=production ANALYZE=true webpack",
     "clean": "rimraf dist/",
     "build": "npm run clean && cross-env NODE_ENV=production babel-node scripts/build",
-    "serve": "serve dist/"
+    "serve": "serve dist/",
+    "build:static": "react-static build"
   },
   "dependencies": {
     "animejs": "^2.2.0",
@@ -20,6 +22,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-inlinesvg": "^0.7.5",
+    "react-static": "^5.1.8",
     "styled-components": "^3.1.6",
     "uuid": "^3.2.1"
   },

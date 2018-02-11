@@ -1,6 +1,7 @@
 /* eslint-disable react/prefer-stateless-function */
 
 import React from 'react';
+import '../styles/styles.css';
 
 import Header from './Sections/Header';
 import Intro from './Intro';

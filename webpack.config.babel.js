@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -9,14 +8,31 @@ const isDev = NODE_ENV === 'development';
 const isProd = NODE_ENV === 'production';
 
 const bundleAnalyzerPlugin = new BundleAnalyzerPlugin();
-const extractTextPlugin = new ExtractTextPlugin('styles.css');
+const extractTextPlugin = new ExtractTextPlugin({
+  filename: 'styles.css',
+  allChunks: true,
+});
 
 const cssLoader = isProd
   ? {
     test: /\.css$/,
-    use: ExtractTextPlugin.extract({
-      fallback: 'style-loader',
-      use: 'css-loader',
+    loader: ExtractTextPlugin.extract({
+      fallback: {
+        loader: 'style-loader',
+        options: {
+          sourceMap: false,
+          hmr: false,
+        },
+      },
+      use: [
+        {
+          loader: 'css-loader',
+          options: {
+            minimize: true,
+            sourceMap: false,
+          },
+        },
+      ]
     })
   }
   : {
@@ -57,7 +73,7 @@ module.exports = ({ isNode }) => {
     output: {
       filename,
       chunkFilename: '[name].bundle.js',
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(process.cwd(), 'dist'),
       libraryTarget: isNode ? 'umd' : undefined,
       publicPath: '/',
     },
@@ -96,7 +112,7 @@ module.exports = ({ isNode }) => {
       }),
       ...plugins,
     ],
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'source-map',
     devServer: {
       port: 9000,
       compress: true,

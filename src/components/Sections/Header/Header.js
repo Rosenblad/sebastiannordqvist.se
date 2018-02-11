@@ -1,7 +1,7 @@
 import React from 'react';
 import codeHtml from './code.html';
 
-import animate from '../../../animate';
+import animate from './animate';
 
 class Code extends React.Component {
   componentDidMount() {
@@ -10,9 +10,7 @@ class Code extends React.Component {
 
   render() {
     return (
-      <header id="codeRoot">
-        {codeHtml}
-      </header>
+      <header id="codeRoot" dangerouslySetInnerHTML={{ __html: codeHtml }} />
     );
   }
 }

@@ -80,7 +80,6 @@ html {
 
 body {
   margin: 0;
-  background: blue;
 }
 
 section:last-child {
@@ -221,10 +220,12 @@ body {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   color: rgba(0, 0, 0, 0.87);
+  background-color: #1e2228;
 
   /* Atlas Grotesk, Futura, Lato, Maison Neue, Real Text, Roboto, and Suisse Int’l. */
 }
 
+.content,
 footer,
 #codeRoot {
 	max-width: 625px;
@@ -280,10 +281,15 @@ a {
 	text-decoration: none;
 }
 
+svg {
+  max-width: 100%;
+}
+
 .content {
 	border-radius: 2px;
 	z-index: 100;
 	position: relative;
+  background-color: #fff;
 	box-shadow: 0px 0px 20px 10px #1B1F24;
 }
 

@@ -1,30 +1,20 @@
-import React from 'react'
+import React from 'react';
+import SVG from 'react-inlinesvg';
 import uuid from 'uuid';
+import svgIcons from '../svg';
 
-function importAll(req) {
-	const keys = req.keys();
-	const components = [];
-	keys.forEach(key => components.push(req(key).default));
+const Competence = () => (
+  <section className="competence">
+    <div className="row">
 
-	return components;
-};
+      {svgIcons.map(icon => (
+        <div className="competency cx2 cs2" key={uuid.v4()}>
+          <SVG src={`../src/svg/${icon}.svg`} />
+        </div>
+        ))}
 
-const components = importAll(require.context('../svg', false, /\.svg$/));
+    </div>
+  </section>
+);
 
-const Competence = () => {
-	return(
-		<section className="competence">
-			<div className="row">
-
-				{components.map(Component => (
-					<div className="competency cx2 cs2" key={uuid.v4()}>
-						<Component />
-					</div>
-				))}
-
-			</div>
-		</section>
-	)
-}
-
-export default Competence
+export default Competence;

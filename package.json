@@ -46,6 +46,7 @@
     "pump": "^3.0.0",
     "raw-loader": "^0.5.1",
     "react-svg-loader": "^2.1.0",
+    "react-universal-component": "^2.8.2",
     "rimraf": "^2.6.2",
     "serve": "^6.4.9",
     "st": "^1.2.2",

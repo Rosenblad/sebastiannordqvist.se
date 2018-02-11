@@ -5,6 +5,7 @@ import animate from './animate';
 
 class Code extends React.Component {
   componentDidMount() {
+  	console.log('Code.componentDidMount()');
     animate();
   }
 

@@ -1,6 +1,8 @@
 import anime from 'animejs';
 
 export default () => {
+  console.log('running animate');
+  
   const body = document.querySelector('body');
   const code = document.querySelector('.code');
 

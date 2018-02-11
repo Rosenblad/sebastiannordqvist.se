@@ -1,6 +1,7 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import glob from 'glob';
+import { ReportChunks } from 'react-universal-component';
 import flushChunks from 'webpack-flush-chunks';
 import fs from 'fs-extra';
 import path from 'path';
@@ -14,6 +15,12 @@ export default async ({ config, clientStats }) => {
   let clientScripts = [];
   let clientStyleSheets = [];
 
+  const CompWithContext = props => (
+    <ReportChunks report={chunkName => chunkNames.push(chunkName)}>
+      <Comp {...props} />
+    </ReportChunks>
+  );
+
   const renderToStringAndExtract = comp => {
     const appHtml = renderToString(comp);
     const { scripts, stylesheets } = flushChunks(clientStats, {
@@ -26,7 +33,7 @@ export default async ({ config, clientStats }) => {
     return appHtml;
   }
 
-  const appHtml = await renderToStringAndExtract(<Comp />);
+  const appHtml = await renderToStringAndExtract(<CompWithContext />);
 
   const HeadWithMeta = ({ children }) => {
     return (

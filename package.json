@@ -6,13 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "react-static start",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server",
-    "build:webpack": "npm run clean && cross-env NODE_ENV=production webpack",
-    "analyze": "cross-env NODE_ENV=production ANALYZE=true webpack",
-    "clean": "rimraf dist/",
-    "build": "npm run clean && cross-env NODE_ENV=production babel-node scripts/build",
-    "serve": "serve dist/",
-    "build:static": "react-static build"
+    "build": "react-static build",
+    "serve": "serve docs/"
   },
   "dependencies": {
     "animejs": "^2.2.0",

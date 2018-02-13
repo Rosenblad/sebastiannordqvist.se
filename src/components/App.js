@@ -4,23 +4,24 @@ import React from 'react';
 import { hot } from 'react-hot-loader';
 
 import '../styles/styles.css';
-import Header from './Sections/Header';
-import Intro from './Intro';
-import ListProjects from './ListProjects';
-import Experience from './Experience';
-import Competence from './Competence';
-import AboutMe from './AboutMe';
-import Footer from './Footer';
+
+import AnimatedCode from './Sections/AnimatedCode';
+import Intro from './Sections/Intro';
+import Projects from './Sections/Projects';
+import Experience from './Sections/Experience';
+import Competence from './Sections/Competence';
+import AboutMe from './Sections/AboutMe';
+import Footer from './Sections/Footer';
 
 class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <Header />
+        <AnimatedCode />
         <div className="content">
           <div className="container-fluid">
             <Intro />
-            <ListProjects />
+            <Projects />
             <Experience />
             <Competence />
             <AboutMe />

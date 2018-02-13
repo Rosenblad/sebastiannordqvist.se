@@ -1,10 +1,16 @@
 module.exports = {
-	extends: "./node_modules/airbnb-style/packages/eslint-config-airbnb/.eslintrc",
 	env: {
 		browser: true,
 		node: true,
 	},
+	parserOptions: {
+		ecmaVersion: 6,
+		sourceType: 'module',
+		ecmaFeatures: {
+			jsx: true,
+		},
+	},
 	rules: {
-		"react/jsx-filename-extension": "off",
+		'react/jsx-filename-extension': 'off',
 	},
 };

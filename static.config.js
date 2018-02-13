@@ -1,4 +1,8 @@
+import Document from './src/Document';
+
 export default {
+	siteRoot: 'http://sebastiannordqvist.se',
+	Document: Document,
 	getRoutes: () => [
 		{
 			path: '/',
